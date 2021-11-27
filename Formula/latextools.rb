@@ -3,21 +3,20 @@ require 'fileutils'
 class Latextools < Formula
   desc "Latex tools"
   homepage "https://github.com/Zehua-Chen/latextools"
-  url "https://github.com/Zehua-Chen/latextools/archive/refs/tags/0.5.1.zip"
-  sha256 "d13b91bc8eb062f4ee4cd9ddea8c4a18088033d6a67be61ee6420aba942a4c15"
+
   license "MIT"
 
-   depends_on "dotnet-sdk" => :build
+  if Hardware::CPU.arm?
+    url "https://github.com/Zehua-Chen/latextools/releases/download/0.6.0/latextools-osx-arm64.tar.gz"
+    sha256 "afecf3a59d2d319271190d29185e459a94c57609dd1484b6f4e996a7b5fdf5a1"
+  else
+    url "https://github.com/Zehua-Chen/latextools/releases/download/0.6.0/latextools-osx-x64.tar.gz"
+    sha256 "31d14cff837b5ccc33cd68a09f09487c47afbf8c9031c8def8389d1090087006"
+  end
 
   def install
-    Dir.chdir("src/latextools")
-
-    system "dotnet", "publish", "-c", "Release", "-r", "osx-x64"
-    Dir.mkdir "unzip"
-    FileUtils.mv "latextools-osx-x64.zip" "unzip/latextools-osx-x64.zip"
-    system "unzip", "unzip/latextools-osx-x64.zip"
-    FileUtils.cp_r "unzip/", "#{prefix}"
-    bin.install_symlink "#{prefix}/latextools"
+    FileUtils.cp_r("latextools", prefix)
+    bin.install_symlink("#{prefix}/latextools")
   end
 
   test do
