@@ -7,11 +7,11 @@ class Latextools < Formula
   license "MIT"
 
   if Hardware::CPU.arm?
-    url "https://github.com/Zehua-Chen/latextools/releases/download/0.6.0/latextools-osx-arm64.tar.gz"
-    sha256 "afecf3a59d2d319271190d29185e459a94c57609dd1484b6f4e996a7b5fdf5a1"
+    url "https://github.com/Zehua-Chen/latextools/releases/download/0.7.0/latextools-osx-arm64.tar.gz"
+    sha256 "810a25f2e7721c71f2113ccad2b79a82212d347e0d3a85c81ea7708a7b1de438"
   else
-    url "https://github.com/Zehua-Chen/latextools/releases/download/0.6.0/latextools-osx-x64.tar.gz"
-    sha256 "31d14cff837b5ccc33cd68a09f09487c47afbf8c9031c8def8389d1090087006"
+    url "https://github.com/Zehua-Chen/latextools/releases/download/0.7.0/latextools-osx-x64.tar.gz"
+    sha256 "8a3671b02208c4d662678c801692c11f2d2ee1daecc4f2ca93d43cc5b7e33417"
   end
 
   def install
