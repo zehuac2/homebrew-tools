@@ -1,9 +1,9 @@
-require 'fileutils'
+require "fileutils"
 
 class Latextools < Formula
-  desc "Latex tools"
+  desc "Tools for latex projects"
   homepage "https://github.com/Zehua-Chen/latextools"
-
+  version "0.7.0"
   license "MIT"
 
   if Hardware::CPU.arm?
@@ -15,7 +15,7 @@ class Latextools < Formula
   end
 
   def install
-    FileUtils.cp_r("latextools", prefix)
+    cp_r("latextools", prefix)
     bin.install_symlink("#{prefix}/latextools")
   end
 
