@@ -7,7 +7,7 @@ class BrewUpgrade < Formula
   def install
     (bin/"brew-upgrade").write <<~SCRIPT
       #!/bin/bash
-      #{HOMEBREW_PREFIX}/bin/brew upgrade
+      #{HOMEBREW_PREFIX}/bin/brew upgrade --formula
     SCRIPT
     chmod 0755, bin/"brew-upgrade"
   end
