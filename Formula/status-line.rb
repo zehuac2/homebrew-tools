@@ -1,12 +1,12 @@
 class StatusLine < Formula
   desc "Three-line styled terminal status bar for Claude Code"
   homepage "https://github.com/zehuac2/status-line"
-  version "0.3.1"
+  version "0.4.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/zehuac2/status-line/releases/download/0.3.1/status-line-darwin-arm64.tar.gz"
-      sha256 "09d75304170e9ced58d6a622d869ce403815b4a36e4e2f1d86ad24bd8761a223"
+      url "https://github.com/zehuac2/status-line/releases/download/0.4.0/status-line-darwin-arm64.tar.gz"
+      sha256 "b68465b4ab7562c15f95e31940be24c4b67e08e094816b0876df5ee3f31a8bee"
     else
       odie "status-line only publishes an Apple Silicon (arm64) build for macOS"
     end
@@ -14,11 +14,11 @@ class StatusLine < Formula
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/zehuac2/status-line/releases/download/0.3.1/status-line-linux-arm64.tar.gz"
-      sha256 "efe08130151c8297d97d0cd8496aa65c54eb0a82d89c1372a5223a7d90c354ef"
+      url "https://github.com/zehuac2/status-line/releases/download/0.4.0/status-line-linux-arm64.tar.gz"
+      sha256 "d957d505724c5029ca9de8f9b12e198242066534ebe32be6e1d3764e1c47cc20"
     else
-      url "https://github.com/zehuac2/status-line/releases/download/0.3.1/status-line-linux-x64.tar.gz"
-      sha256 "700be37821c633de7493f758007c76247b3e2cda9480ee33d39a7ddbd3934cec"
+      url "https://github.com/zehuac2/status-line/releases/download/0.4.0/status-line-linux-x64.tar.gz"
+      sha256 "778ddd57ea5d14f2ff043e23c998d7fa8c13c8bec10389dd1cd790aa6836eb86"
     end
   end
 
