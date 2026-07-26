@@ -1,7 +1,7 @@
 class BrewUpgrade < Formula
   desc "Daily 6pm launchd service that runs `brew upgrade`"
-  homepage "https://github.com/Zehua-Chen/homebrew-tools"
-  url "https://github.com/Zehua-Chen/homebrew-tools.git", branch: "master"
+  homepage "https://github.com/zehuac2/homebrew-tools"
+  url "https://github.com/zehuac2/homebrew-tools.git", branch: "master"
   version "1.0.0"
 
   def install

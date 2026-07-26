@@ -1,10 +1,10 @@
-# Zehua-Chen Tools
+# zehuac2 Tools
 
 ## How do I install these formulae?
 
-`brew install zehua-chen/tools/<formula>`
+`brew install zehuac2/tools/<formula>`
 
-Or `brew tap zehua-chen/tools` and then `brew install <formula>`.
+Or `brew tap zehuac2/tools` and then `brew install <formula>`.
 
 ## Documentation
 
