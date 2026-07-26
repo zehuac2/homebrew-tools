@@ -21,6 +21,6 @@ class BrewUpgrade < Formula
   end
 
   test do
-    assert_predicate bin/"brew-upgrade", :exist?
+    assert_path_exists bin/"brew-upgrade"
   end
 end

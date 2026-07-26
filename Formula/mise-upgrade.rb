@@ -1,12 +1,13 @@
 class MiseUpgrade < Formula
-  desc "Daily 6pm launchd service that runs `mise upgrade`"
+  desc "Daily 6pm launchd service that runs `mise self-update` and `mise upgrade`"
   homepage "https://github.com/zehuac2/homebrew-tools"
   url "https://github.com/zehuac2/homebrew-tools.git", branch: "main"
-  version "1.0.0"
+  version "1.1.0"
 
   def install
     (bin/"mise-upgrade").write <<~SCRIPT
       #!/bin/bash
+      $HOME/.local/bin/mise self-update -y
       $HOME/.local/bin/mise upgrade
     SCRIPT
     chmod 0755, bin/"mise-upgrade"
@@ -21,6 +22,6 @@ class MiseUpgrade < Formula
   end
 
   test do
-    assert_predicate bin/"mise-upgrade", :exist?
+    assert_path_exists bin/"mise-upgrade"
   end
 end
