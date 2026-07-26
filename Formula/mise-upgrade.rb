@@ -1,7 +1,7 @@
 class MiseUpgrade < Formula
   desc "Daily 6pm launchd service that runs `mise upgrade`"
   homepage "https://github.com/zehuac2/homebrew-tools"
-  url "https://github.com/zehuac2/homebrew-tools.git", branch: "master"
+  url "https://github.com/zehuac2/homebrew-tools.git", branch: "main"
   version "1.0.0"
 
   def install
