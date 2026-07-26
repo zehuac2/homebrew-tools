@@ -2,12 +2,15 @@ class BrewUpgrade < Formula
   desc "Daily 6pm launchd service that runs `brew upgrade`"
   homepage "https://github.com/zehuac2/homebrew-tools"
   url "https://github.com/zehuac2/homebrew-tools.git", branch: "main"
-  version "1.0.0"
+  version "1.0.1"
 
   def install
     (bin/"brew-upgrade").write <<~SCRIPT
       #!/bin/bash
-      #{HOMEBREW_PREFIX}/bin/brew upgrade --formula
+      # cron runs with a minimal PATH. Load brew's shellenv first.
+      # This sets PATH so brew can find its own dependencies.
+      eval "$(#{HOMEBREW_PREFIX}/bin/brew shellenv)"
+      brew upgrade --formula
     SCRIPT
     chmod 0755, bin/"brew-upgrade"
   end
